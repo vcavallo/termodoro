@@ -1,5 +1,25 @@
 require 'pry'
 
+class Timer
+
+  def initialize
+    # duration
+    # message
+    # title on/off
+  end
+
+  def parse_time
+    # take duration and make into seconds
+    # return total seconds
+  end
+
+  def run
+    # system call
+      # if title on/off call one or the other
+  end
+
+end
+
 puts "how long? (write only a number for minutes)"
 length_response = gets.chomp
 number = length_response.split(" ").first.to_i
@@ -24,9 +44,4 @@ if title == ""
   system("sleep #{duration} && terminal-notifier -message '#{message}' & disown && exit")
 else
   system("sleep #{duration} && terminal-notifier -message '#{message}' -title '#{title}' & disown && exit")
-end
-
-class SegmentParser
- # this needs to be broken into classes.
-
 end
