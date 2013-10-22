@@ -23,7 +23,7 @@ Too often I avoid setting a simple reminder because I don't want to interrupt my
 ## Things I need to do:
 
 - The biggest one:
-  - Make it a gem!
+  - ~~[Make it a gem!](https://rubygems.org/gems/termodoro)~~ 
 - After that:
   - Object-Orient (shame on me.) / Actually think about design.
   - Instead of getting input from `gets`, the duration and message should be able to be passed in as flags/options (I need to figure out the difference.)
