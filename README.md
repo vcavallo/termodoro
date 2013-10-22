@@ -17,7 +17,7 @@ Too often I avoid setting a simple reminder because I don't want to interrupt my
 - The biggest one:
   - Make it a gem!
 - After that:
-  - Object-Orient (shame on me.)
+  - Object-Orient (shame on me.) / Actually think about design.
   - Instead of getting input from `gets`, the duration and message should be able to be passed in as flags/options (I need to figure out the difference.)
   - set defaults to something agreeable (like maybe 20 minutes and some generic 'do that thing you wanted to do' message)
   - Make it useable in other shells and without the terminal-notifier gem.
