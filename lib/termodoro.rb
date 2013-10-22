@@ -23,7 +23,8 @@ class Termodoro
   end
 
   def seconds?
-
+    
+  end
 
 end
 
