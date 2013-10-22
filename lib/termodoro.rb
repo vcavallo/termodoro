@@ -1,5 +1,7 @@
 require 'pry'
 
+###> WIP Class. Procedural below <###
+
 class Termodoro
 
   def initialize
@@ -8,25 +10,64 @@ class Termodoro
     # title on/off
   end
 
-  def parse_time
-    @how_long.seconds?
-    @how_long.minutes?
-    @how_long.hours?
-    # take duration and make into seconds
-    # return total seconds
-    duration
+  def time_part
+    # parse parse parse
+
+    #=> return the part of the string that describes
+    #=> hours/minutes/seconds
+  end
+
+  def number_part
+    # parse parse parse
+
+    #=> return the part of the string that describes
+    #=> the number of time_parts given
+  end
+
+  def calculate_time
+    if @how_long.minutes?
+      # method to calculate seconds from minutes
+    elsif @how_long.hours?
+      # method to calculate seconds from hours
+    elsif @how_long.seconds?
+      # return seconds
+    end
+  
+    seconds #=> returns seconds
   end
 
   def run
-    # system call
-      # if title on/off call one or the other
+    # if title on/off call one or the other
+      #=> returns the terminal call (this will need to change)
   end
 
   def seconds?
-    
+    # takes time_part
+    # true if time_part is a version of "seconds"
+    #=> true/false
+  end
+
+  def minutes?
+    # takes time_part
+    # true if time_part is a version of "minutes"
+    #=> true/false
+  end
+
+  def hours?
+    # takes time_part
+    # true if time_part is a version of "hours"
+    #=> true/false
+  end
+
+  def clean_message
+    # will need something to sanitize apostrophes and stuff
+    #=> return sanitized message to insert into terminal
   end
 
 end
+
+
+###> procedural code below. object archiecting happening above <###
 
 puts "how long? (write only a number for minutes)"
 length_response = gets.chomp
