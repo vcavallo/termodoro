@@ -1,6 +1,6 @@
 require 'pry'
 
-class Timer
+class Termodoro
 
   def initialize
     # duration
