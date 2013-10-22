@@ -3,20 +3,27 @@ require 'pry'
 class Termodoro
 
   def initialize
-    # duration
+    @how_long
     # message
     # title on/off
   end
 
   def parse_time
+    @how_long.seconds?
+    @how_long.minutes?
+    @how_long.hours?
     # take duration and make into seconds
     # return total seconds
+    duration
   end
 
   def run
     # system call
       # if title on/off call one or the other
   end
+
+  def seconds?
+
 
 end
 
