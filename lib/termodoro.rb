@@ -39,8 +39,8 @@ class Termodoro
   end
 
   def seconds?
-    # takes time_part
-    # true if time_part is a version of "seconds"
+    seconds = %w[s sec secs second seconds]
+    true if seconds.include?(self.time_part)
     #=> true/false
   end
 
@@ -51,9 +51,8 @@ class Termodoro
   end
 
   def hours?
-    hours = %w[s sec secs second seconds]
-    # takes time_part
-    # true if time_part is a version of "hours"
+    hours = %w[h hr hrs hour hours]
+    true if hours.include?(self.time_part)
     #=> true/false
   end
 
