@@ -4,6 +4,9 @@ require_relative '../config/environment'
 
 class Termodoro
 
+  SECS_IN_MIN = 60
+  SECS_IN_HOUR = 3600
+
   def initialize(arguments)
     @arguments = arguments
     # message
@@ -21,11 +24,11 @@ class Termodoro
   end
 
   def calculate_time
-    if time_parts.minutes?
-      # method to calculate seconds from minutes
-    elsif time_parts.hours?
-      # method to calculate seconds from hours
-    elsif time_parts.seconds?
+    if time_part.minutes?
+      seconds = number_part * SECS_IN_MIN
+    elsif time_part.hours?
+      seconds = number_part * SECS_IN_HOUR
+    elsif time_part.seconds?
       seconds = number_part
     end
   
