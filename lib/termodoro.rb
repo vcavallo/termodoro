@@ -1,17 +1,17 @@
-require 'pry'
+require_relative '../config/environment'
 
 ###> WIP Class. Procedural below <###
 
 class Termodoro
 
-  def initialize
-    @how_long
+  def initialize(arguments)
+    @arguments = arguments
     # message
     # title on/off
   end
 
   def time_part
-    # parse parse parse
+    segment = @arguments.scan(/[\D]+[^\w]/)
 
     #=> return the part of the string that describes
     #=> hours/minutes/seconds
@@ -36,9 +36,10 @@ class Termodoro
     seconds #=> returns seconds
   end
 
-  def run
+  def command
     # if title on/off call one or the other
-      #=> returns the terminal call (this will need to change)
+    # this is what will be passed to the executable in that interface
+    #=> return the fully-formed command string for Bash
   end
 
   def seconds?
@@ -66,8 +67,11 @@ class Termodoro
 
 end
 
+binding.pry
 
 ###> procedural code below. object archiecting happening above <###
+
+=begin 
 
 puts "how long? (write only a number for minutes)"
 length_response = gets.chomp
@@ -94,3 +98,5 @@ if title == ""
 else
   system("sleep #{duration} && terminal-notifier -message '#{message}' -title '#{title}' & disown && exit")
 end
+
+=end
