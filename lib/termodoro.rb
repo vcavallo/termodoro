@@ -11,26 +11,22 @@ class Termodoro
   end
 
   def time_part
-    segment = @arguments.scan(/[\D]+[^\w]/)
-
-    #=> return the part of the string that describes
-    #=> hours/minutes/seconds
+    segment = @arguments.scan(/[\D]+[^\w]/).first.strip
+    #=> hours/minutes/seconds, etc.
   end
 
   def number_part
-    # parse parse parse
-
-    #=> return the part of the string that describes
+    number = @arguments.scan(/[\d]+/).first.strip.to_i
     #=> the number of time_parts given
   end
 
   def calculate_time
-    if @how_long.minutes?
+    if time_parts.minutes?
       # method to calculate seconds from minutes
-    elsif @how_long.hours?
+    elsif time_parts.hours?
       # method to calculate seconds from hours
-    elsif @how_long.seconds?
-      # return seconds
+    elsif time_parts.seconds?
+      seconds = number_part
     end
   
     seconds #=> returns seconds
@@ -49,12 +45,13 @@ class Termodoro
   end
 
   def minutes?
-    # takes time_part
-    # true if time_part is a version of "minutes"
+    minutes = %w[m min mins minute minutes]
+    true if minutes.include?(self.time_part)
     #=> true/false
   end
 
   def hours?
+    hours = %w[s sec secs second seconds]
     # takes time_part
     # true if time_part is a version of "hours"
     #=> true/false
