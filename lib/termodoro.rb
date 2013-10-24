@@ -1,7 +1,4 @@
-require_relative '../config/environment'
-
-###> WIP Class. Procedural below <###
-
+# require_relative '../config/environment'
 
 class Termodoro
   attr_accessor :time_part, :number_part, :message
@@ -65,6 +62,7 @@ class Termodoro
   end
 
   def clean_message
+    parse_message
     # will need something to sanitize apostrophes and stuff
     #=> return sanitized message to insert into terminal
   end
@@ -72,44 +70,9 @@ class Termodoro
   def command
     # title = "title" -- leaving off title for now.
     # if title on/off call one or the other
-    
-    # this is what will be passed to the executable in that interface
-    puts "sleep #{calculate_time} && terminal-notifier -message '#{parse_message}' & disown"
+  
+    "sleep #{calculate_time} && terminal-notifier -message '#{parse_message}' -title 'Termodoro' & disown"
     #=> return the fully-formed command string for Bash
   end
 
 end
-
-binding.pry
-
-###> procedural code below. object archiecting happening above <###
-
-=begin 
-
-puts "how long? (write only a number for minutes)"
-length_response = gets.chomp
-number = length_response.split(" ").first.to_i
-segment = length_response.split(" ").last
-duration = 5
-
-if segment == "seconds" || segment == "sec" || segment == "secs" || segment == "s"
-  duration = number
-elsif segment == "m" || segment == "min" || segment == "mins" || segment == "minutes" || segment == ""
-  duration = number * 60
-elsif segment == "h" || segment == "hour" || segment == "hours"
-  duration = number * 3600
-end
-
-puts "what message?"
-message = gets.chomp
-puts "enter a title here if you want one,"
-puts "otherwise, just hit enter"
-title = gets.chomp
-
-if title == ""
-  system("sleep #{duration} && terminal-notifier -message '#{message}' & disown && exit")
-else
-  system("sleep #{duration} && terminal-notifier -message '#{message}' -title '#{title}' & disown && exit")
-end
-
-=end
