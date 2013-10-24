@@ -13,11 +13,11 @@ class Termodoro
     @arguments = arguments
 
     # message
-    # title on/off
+    # title on/off -- probably going to drop this
   end
 
   def parse_time_part
-    segment = @arguments.scan(/[\D]+[^\w]/).first.strip
+    segment = @arguments.scan(/[\D]+[^\w]/).first.split(" ").first
     self.time_part = segment
     #=> hours/minutes/seconds, etc.
   end
@@ -30,7 +30,7 @@ class Termodoro
 
   def parse_message
     # .split(/[\d]+.[\w]+/).last 
-    parsed_message = @arguments.split(/[\d]+.[\w]+/).last.strip
+    parsed_message = @arguments.split(/^\s*[\d]+\s*[\w]+/).last.strip
     self.message = parsed_message
   end
 
@@ -44,16 +44,6 @@ class Termodoro
     end
   
     seconds #=> returns seconds
-  end
-
-  def command
-    message = "something"
-    # title = "title" -- leaving off title for now.
-    # sleep 200 && terminal-notifier -message "message" -title "title" & disown
-    # if title on/off call one or the other
-    # this is what will be passed to the executable in that interface
-    system "sleep #{calculate_time} && terminal-notifier -message '#{message}' & disown"
-    #=> return the fully-formed command string for Bash
   end
 
   def seconds?
@@ -77,6 +67,15 @@ class Termodoro
   def clean_message
     # will need something to sanitize apostrophes and stuff
     #=> return sanitized message to insert into terminal
+  end
+
+  def command
+    # title = "title" -- leaving off title for now.
+    # sleep 200 && terminal-notifier -message "message" -title "title" & disown
+    # if title on/off call one or the other
+    # this is what will be passed to the executable in that interface
+    puts "sleep #{calculate_time} && terminal-notifier -message '#{parse_message}' & disown"
+    #=> return the fully-formed command string for Bash
   end
 
 end
