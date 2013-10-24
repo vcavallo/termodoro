@@ -71,8 +71,8 @@ class Termodoro
 
   def command
     # title = "title" -- leaving off title for now.
-    # sleep 200 && terminal-notifier -message "message" -title "title" & disown
     # if title on/off call one or the other
+    
     # this is what will be passed to the executable in that interface
     puts "sleep #{calculate_time} && terminal-notifier -message '#{parse_message}' & disown"
     #=> return the fully-formed command string for Bash
