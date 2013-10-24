@@ -2,8 +2,9 @@ require_relative '../config/environment'
 
 ###> WIP Class. Procedural below <###
 
+
 class Termodoro
-  attr_accessor :time_part, :number_part
+  attr_accessor :time_part, :number_part, :message
 
   SECS_IN_MIN = 60
   SECS_IN_HOUR = 3600
@@ -27,21 +28,31 @@ class Termodoro
     #=> the number of time_parts given
   end
 
+  def parse_message
+    # .split(/[\d]+.[\w]+/).last 
+    parsed_message = @arguments.split(/[\d]+.[\w]+/).last.strip
+    self.message = parsed_message
+  end
+
   def calculate_time
     if minutes?
-      seconds = number_part * SECS_IN_MIN
+      seconds = parse_number_part * SECS_IN_MIN
     elsif hours?
-      seconds = number_part * SECS_IN_HOUR
+      seconds = parse_number_part * SECS_IN_HOUR
     elsif seconds?
-      seconds = number_part
+      seconds = parse_number_part
     end
   
     seconds #=> returns seconds
   end
 
   def command
+    message = "something"
+    # title = "title" -- leaving off title for now.
+    # sleep 200 && terminal-notifier -message "message" -title "title" & disown
     # if title on/off call one or the other
     # this is what will be passed to the executable in that interface
+    system "sleep #{calculate_time} && terminal-notifier -message '#{message}' & disown"
     #=> return the fully-formed command string for Bash
   end
 
