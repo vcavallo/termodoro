@@ -1,6 +1,8 @@
-require_relative './config/environment'
+require_relative 'termodoro'
 
 class Run
-  a = Termodoro.new("5 s test")
-  exec(a.command)
+  def self.execute(input)
+    a = Termodoro.new(input)
+    exec(a.command)
+  end
 end

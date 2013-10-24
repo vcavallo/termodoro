@@ -1,4 +1,3 @@
-# require_relative '../config/environment'
 
 class Termodoro
   attr_accessor :time_part, :number_part, :message
