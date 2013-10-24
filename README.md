@@ -50,6 +50,9 @@ This is the first gem I've built. I do not claim that it is perfect, nor that it
   - Write good tests!
   - Make sure to follow gem best-practices
   - A bunch of other stuff I'll add here
+  - Make sure it persists through computer sleep
+  - Make sure I'm using ARGV properly and issuing the system command properly
+    - Generally revise to adhere to best practices. 
 
 ## Upcoming features:
 
