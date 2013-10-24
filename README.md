@@ -1,13 +1,36 @@
-Termodoro
+# Termodoro
 =========
-
-*This is a work-in-progress*
 
 ## What is this?
 
-**Termodoro** is on its way to being a lightweight command-line pomodoro timer / reminder message app. It'll be a gem.  
-The idea is that you run it with options for duration and message. It sits in the background, out of your way, waiting for as long as you specified and then showing the message you wrote.  
-It will work something like:
+***Termodoro*** is an ultra-simple, frictionless BASH reminder / pomodoro timer ( in fact it's portmanteau of *terminal* and *[pomodoro](http://en.wikipedia.org/wiki/Pomodoro_Technique)* )  
+You pass it an amount of time and a message. After the specified amount of time elapses the message pops up. *Simple!*
+
+## Why would I use this?
+
+Maybe you're hard at work coding and you realize that there's something you need to do in 10 minutes… Rather than try to remember on your own or risk derail your excellent programming groove by firing up a bulky reminder app, just enter a simple command into your terminal (where you're probably staring anyway). Hit enter and quickly get back to what you were doing!  
+
+Perhaps you're pair-programming and you want to switch roles in a given amount of time… Throw a quick command in between `cd`s and `ls`s and be on your way. Zero distractions. 
+
+You're already busy. Don't also be forgetful.  
+Too often I avoid setting a simple reminder because I don't want to interrupt my current flow - that shouldn't be a thing.
+
+## Useage
+
+### Install:
+
+`gem install termodoro`
+
+### Use:
+
+`termodoro 40 minutes switch pairs`  
+`termodoro 5m make a commit`  
+`termodoro 1 hr remember to eat`  
+`termodoro 10 seconds test termodoro`
+
+..etc...
+
+
 
 `termodoro 1 hour "call girlfriend back"`  
 or  
@@ -15,20 +38,24 @@ or
 or  
 `termodoro 20m "switch driver/navigator in pair programming"`  
 
-I imagine it'll be good for simple reminders (get up and walk around for a minute, call that person who just texted you, stop coding and eat lunch, etc.) or pomodoro workflows. The main goal is that it is incredibly easy to use from the command line so that you can set it ultra-quickly without losing your current train of thought.  
-Too often I avoid setting a simple reminder because I don't want to interrupt my current flow - that shouldn't be a thing.
-
 -----
+
+## A gentle warning…
+
+This is the first gem I've built. I do not claim that it is perfect, nor that it follows best practices, nor that it is perfectly secure. Use at your own risk and feel free to fork this repo and improve any flaws you encounter. I'm wide open to suggestions for features as well.
 
 ## Things I need to do:
 
 - The biggest one:
   - ~~[Make it a gem!](https://rubygems.org/gems/termodoro)~~ 
 - After that:
-  - Object-Orient (shame on me.) / Actually think about design.
-  - Instead of getting input from `gets`, the duration and message should be able to be passed in as flags/options (I need to figure out the difference.)
+  - ~~Object-Orient (shame on me.) / Actually think about design.~~
+  - ~~Instead of getting input from `gets`, the duration and message should be able to be passed in as flags/options (I need to figure out the difference.)~~
   - set defaults to something agreeable (like maybe 20 minutes and some generic 'do that thing you wanted to do' message)
   - Make it useable in other shells and without the terminal-notifier gem.
+  - Sanitize the message so as to not cause bash issues
+  - Write good tests!
+  - Make sure to follow gem best-practices
   - A bunch of other stuff I'll add here
 
 ## Upcoming features:
