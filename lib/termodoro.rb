@@ -12,6 +12,12 @@ class Termodoro
     # title on/off -- probably going to drop this
   end
 
+  # parse class
+    # Parse.new(input)
+      # 
+  # calculate class
+  # run clean_message
+
   def parse_time_part
     segment = @arguments.match(/\D+/)[0].split(' ').first
     self.time_part = segment
