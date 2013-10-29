@@ -13,7 +13,7 @@ class Termodoro
   end
 
   def parse_time_part
-    segment = @arguments.scan(/[\D]+[^\w]/).first.split(" ").first
+    segment = @arguments.match(/\D+/)[0].split(' ').first
     self.time_part = segment
     #=> hours/minutes/seconds, etc.
   end
@@ -26,8 +26,8 @@ class Termodoro
 
   def parse_message
     # .split(/[\d]+.[\w]+/).last 
-    parsed_message = @arguments.split(/^\s*[\d]+\s*[\w]+/).last.strip
-    self.message = parsed_message
+    parsed_message = @arguments.split(/^\s*[\d]+\s*[\w]+/).last || 'Termodoro'
+    self.message = parsed_message.strip
   end
 
   def calculate_time
@@ -38,7 +38,7 @@ class Termodoro
     elsif seconds?
       seconds = parse_number_part
     end
-  
+
     seconds #=> returns seconds
   end
 
@@ -69,8 +69,9 @@ class Termodoro
   def command
     # title = "title" -- leaving off title for now.
     # if title on/off call one or the other
-  
-    "sleep #{calculate_time} && terminal-notifier -message '#{parse_message}' -title 'Termodoro' & disown"
+    time_part = calculate_time
+    msg_part = parse_message
+    "sleep #{time_part} && terminal-notifier -message '#{msg_part}' -title 'Termodoro' & disown"
     #=> return the fully-formed command string for Bash
   end
 
