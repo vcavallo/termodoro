@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Use this little utility to set simple reminders from the command line. See the github page below for more information"
   s.authors     = ["Vinney Cavallo"]
   s.email       = 'vcavallo@gmail.com'
-  s.files       = ["lib/termodoro.rb", "lib/run.rb", "bin/termodoro"]
+  s.files       = `git ls-files`.split("\n")
   s.executables << 'termodoro'
   s.add_runtime_dependency "terminal-notifier"
   s.homepage    =
