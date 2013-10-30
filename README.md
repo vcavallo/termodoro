@@ -3,6 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/termodoro.png)](http://badge.fury.io/rb/termodoro)  
 [![Build Status](https://travis-ci.org/vcavallo/termodoro.png)](https://travis-ci.org/vcavallo/termodoro)
 
+[RDoc Documentation](http://rdoc.info/github/vcavallo/termodoro/master/frames)
+
 ## What is this?
 
 ***Termodoro*** is an ultra-simple, frictionless BASH reminder / pomodoro timer ( in fact it's portmanteau of *terminal* and *[pomodoro](http://en.wikipedia.org/wiki/Pomodoro_Technique)* )  
