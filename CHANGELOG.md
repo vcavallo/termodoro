@@ -1,6 +1,6 @@
 ### 0.2.6 (10/29/2013)
 
-- Fully-document using YARD. Updated variable names (`time_part` --> `time_unit`, `number_part` --> `number_of_units`). Minor readme updates.
+- Fully-document using YARD. Updated variable names (`time_part` --> `time_unit`, `number_part` --> `number_of_units`). Minor readme updates. 
 
 ### 0.2.5 (10/29/2013)
  

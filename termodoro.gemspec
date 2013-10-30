@@ -1,3 +1,4 @@
+
 Gem::Specification.new do |s|
   s.name        = 'termodoro'
   s.version     = '0.2.6'

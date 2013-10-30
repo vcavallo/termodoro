@@ -1,5 +1,4 @@
 
-
 # A new instance of this class takes user-input as command line arguments and 
 # prepares a string to be execute as a Bash system command. The user specifies an
 # amount of time and an optional message to display. After the amount of time elapses
