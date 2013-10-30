@@ -53,7 +53,12 @@ class Termodoro
 
   # Depending on what unit of time is being used, determines the number of seconds
   # using multiplication by {Termodoro::SECS_IN_MIN SECS_IN_MIN} and 
-  # {Termodoro::SECS_IN_HOUR SECS_IN_HOUR} constants.
+  # {Termodoro::SECS_IN_HOUR SECS_IN_HOUR} constants. The check to #seconds? is 
+  # not necessary, but feels nice.
+  # @see #parse_number_of_units
+  # @see #seconds?
+  # @see #minutes?
+  # @see #hours?
   # @return [Integer] total number of seconds for which to wait until the reminder
   #   is displayed.
   def calculate_time
@@ -69,8 +74,9 @@ class Termodoro
   end
 
 
-  # Truthy if user has input a number of seconds. 
+  # Truthy if user has input a number of seconds.
   # @return [Boolean] 
+  # @see #parse_time_unit
   def seconds?
     seconds = %w[s sec secs second seconds]
     true if seconds.include?(parse_time_unit)
@@ -78,27 +84,31 @@ class Termodoro
 
   # Truthy if user has input a number of minutes. 
   # @return [Boolean] 
+  # @see #parse_time_unit
   def minutes?
     minutes = %w[m min mins minute minutes]
     true if minutes.include?(parse_time_unit)
   end
 
   # Truthy if user has input a number of hours. 
+  # @see #parse_time_unit
   # @return [Boolean] 
   def hours?
     hours = %w[h hr hrs hour hours]
     true if hours.include?(parse_time_unit)
   end
 
-  # PENDING - will eventually be used to make user input safe to run as terminal
+  # PENDING - will eventually be used to ensure user input is safe to run as terminal
   # command. (i.e. remove special punctuation and the like).
   # @return [String] sanitized message.
   def clean_message
     parse_message
   end
 
-  # Workhorse method. Runs #calculate_time and #parse_message, taking the results
+  # Workhorse method: Runs #calculate_time and #parse_message, taking the results
   # of those methods and creating the string to execute.
+  # @see #calculate_time
+  # @see #parse_message
   # @return [String] the fully-formed command string ready to be run by bash as 
   #   a system command.
   def command
