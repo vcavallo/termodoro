@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'termodoro'
-  s.version     = '0.1.9'
+  s.version     = '0.2.5'
   s.date        = '2013-10-24'
   s.summary     = "A lightweight CL reminder app"
   s.description = "Use this little utility to set simple reminders from the command line. See the github page below for more information"
