@@ -1,6 +1,10 @@
+### 0.3.0 (10/30/2013)
+
+- Now with tests! - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.2.6 (10/29/2013)
 
-- Fully-document using YARD. Updated variable names (`time_part` --> `time_unit`, `number_part` --> `number_of_units`). Minor readme updates. 
+- Fully-document using YARD. Updated variable names (`time_part` --> `time_unit`, `number_part` --> `number_of_units`). Minor readme updates. - [@vcavallo](http://github.com/vcavallo)
 
 ### 0.2.5 (10/29/2013)
  
