@@ -50,12 +50,11 @@ This is the first gem I've built. I do not claim that it is perfect, nor that it
   - set defaults to something agreeable (like maybe 20 minutes and some generic 'do that thing you wanted to do' message) such that you could just do `termodoro` and it'll do that default.
   - Make it useable in other shells and without the terminal-notifier gem.
   - Sanitize the message so as to not cause bash issues
-  - Write good tests!
-  - Make sure to follow gem best-practices
+  - Write good tests! *(getting there)*
+  - Make sure to follow gem best-practices *(Might be done with this one...)*
   - A bunch of other stuff I'll add here
   - Make sure it persists through computer sleep
   - Make sure I'm using ARGV properly and issuing the system command properly
-    - Generally revise to adhere to best practices. 
 
 ## Upcoming features:
 
