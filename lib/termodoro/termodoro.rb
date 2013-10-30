@@ -101,9 +101,9 @@ class Termodoro
   # PENDING - will eventually be used to ensure user input is safe to run as terminal
   # command. (i.e. remove special punctuation and the like).
   # @return [String] sanitized message.
-  def clean_message
-    parse_message
-  end
+  # def clean_message
+  #   parse_message
+  # end
 
   # Workhorse method: Runs #calculate_time and #parse_message, taking the results
   # of those methods and creating the string to execute.

@@ -12,6 +12,10 @@ describe "Termodoro" do
     expect(term.arguments).to eq(input)
   end
 
+  it "ends up with a well-formed string to be issued as a system command" do
+    expect(term.command).to be_an_instance_of(String)
+  end
+
   describe "Constants" do
     it "has a constant that represents number of seconds in a minute" do
       expect(Termodoro::SECS_IN_MIN / 60).to eq(1)
@@ -71,16 +75,21 @@ describe "Termodoro" do
   end
 
   describe "Internal logic" do
+    it "can calculate the time given a unit of time" do
+      minute_message = "5 minutes"
+      term_alt = Termodoro.new(minute_message)
+      expect(term_alt.calculate_time).to eq(300)
+    end
+
     it "can santize the message" do
-      pending
+      pending "This feature needs to be built. Sort of important."
     end
 
-    it "can calculate" do
-      pending
-    end
+  end
 
-    it "given a string, can return a well-formed command" do
-      pending
+  describe "Command line behavior and other shell support" do
+    it "Coming soon..." do
+      pending "This needs to be built and explored"
     end
   end
 
