@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'termodoro'
-  s.version     = '0.3.0'
+  s.version     = '0.3.5'
   s.date        = '2013-10-30'
   s.summary     = "A lightweight CL reminder app"
   s.description = "Use this little utility to set simple reminders from the command line. See the github page below for more information"
@@ -15,4 +15,6 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'simplecov' 
+  s.add_development_dependency 'json'
 end

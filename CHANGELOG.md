@@ -1,3 +1,7 @@
+### 0.3.5 (10/30/2013)
+
+- Now with SimpleCov! 100% on first run. Damn that felt good. - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.3.0 (10/30/2013)
 
 - Now with tests! - [@vcavallo](http://github.com/vcavallo)
