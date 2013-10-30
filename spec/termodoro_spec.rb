@@ -24,10 +24,6 @@ describe "Termodoro" do
 
   describe "Methods on user input" do
 
-    # it "takes a well-formed time and message string" do
-    #   expect(term.command).to be_an_instance_of(String)
-    # end
-
     it "can parse and retreive the decimal provided" do
       expect(term.parse_number_of_units).to eq(10)
     end 
@@ -42,8 +38,19 @@ describe "Termodoro" do
 
     it "allows the message to be optional" do
       no_message_arg = "10 seconds"
-      term = Termodoro.new(no_message_arg)
-      term.command.should be_an_instance_of(String)
+      term_alt = Termodoro.new(no_message_arg)
+      expect(term_alt.command).to be_an_instance_of(String)
+    end
+
+    describe "Flexibility on wording of unit of time" do
+      it "will accept partial matches of 'seconds'" do
+        weird_seconds = "10 s"
+        term_alt = Termodoro.new(weird_seconds)
+        expect(term_alt.parse_time_unit).to eq("s")
+      end
+
+
+
     end
   end
 
@@ -53,6 +60,10 @@ describe "Termodoro" do
     end
 
     it "can calculate" do
+      pending
+    end
+
+    it "given a string, can return a well-formed command" do
       pending
     end
   end
