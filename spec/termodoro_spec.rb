@@ -43,13 +43,29 @@ describe "Termodoro" do
     end
 
     describe "Flexibility on wording of unit of time" do
-      it "will accept partial matches of 'seconds'" do
+      it "will accept partial matches of 'seconds' (i.e. s sec secs second seconds)" do
         weird_seconds = "10 s"
         term_alt = Termodoro.new(weird_seconds)
-        expect(term_alt.parse_time_unit).to eq("s")
+        expect(term_alt.calculate_time).to eq(10)
       end
 
+      it "will accept partial matches of 'minutes' (i.e. m min mins minute minutes)" do
+        weird_minutes = "10 min"
+        term_alt = Termodoro.new(weird_minutes)
+        expect(term_alt.calculate_time).to eq(600)
+      end
 
+      it "will accept partial matches of 'hours' (i.e. h hr hrs hour hours)" do
+        weird_hours = "1 hr"
+        term_alt = Termodoro.new(weird_hours)
+        expect(term_alt.calculate_time).to eq(3600)
+      end
+
+      it "allows user to smush time unit directly onto decimal without a space (i.e. 10secs, 5minute, etc.)" do
+        spaceless_seconds = "10secs"
+        term_alt = Termodoro.new(spaceless_seconds)
+        expect(term_alt.calculate_time).to eq(10)
+      end
 
     end
   end
