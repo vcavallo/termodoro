@@ -12,18 +12,17 @@ class Termodoro
     # title on/off -- probably going to drop this
   end
 
-  # parse class
-    # Parse.new(input)
-      # 
-  # calculate class
-  # run clean_message
-
+  # Looks into the user-supplied arguments and retreives the segment that relates
+  # to hours, minutes or seconds. 
+  # @return [String] a version of hours, minutes or seconds, depending on
+  #   how the user inputs it ("s", "Sec", "seconds", etc.)
   def parse_time_part
     segment = @arguments.match(/\D+/)[0].split(' ').first
     self.time_part = segment
-    #=> hours/minutes/seconds, etc.
   end
 
+  # Looks into the user-supplied arguments and parses out the digit used for time.
+  # @return [Integer] 
   def parse_number_part
     number = @arguments.scan(/[\d]+/).first.strip.to_i
     self.number_part = number
