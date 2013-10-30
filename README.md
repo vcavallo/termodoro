@@ -1,5 +1,6 @@
 # Termodoro
 
+[![Gem Version](https://badge.fury.io/rb/termodoro.png)](http://badge.fury.io/rb/termodoro)  
 [![Build Status](https://travis-ci.org/vcavallo/termodoro.png)](https://travis-ci.org/vcavallo/termodoro)
 
 ## What is this?
