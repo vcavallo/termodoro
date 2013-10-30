@@ -59,3 +59,15 @@ This is the first gem I've built. I do not claim that it is perfect, nor that it
 - set your own global defaults and shortcuts
 - option to set a reminder to repeat
 - other stuff.. don't want it to get bloated though.
+
+-----
+
+## Contributing:
+
+You know the drill, right?
+
+* Fork.
+* Topic branches make puppies smile.
+* Make your feature addition or bug fix and be sure to include tests.
+* Update the CHANGELOG.md.
+* Send a pull request.
