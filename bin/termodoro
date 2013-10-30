@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require 'termodoro'
+require_relative '../config/environment'
+# require 'termodoro'
 
 a = Termodoro.new(ARGV.join(" "))
 exec(a.command)
