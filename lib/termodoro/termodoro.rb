@@ -6,6 +6,7 @@
 # the word "Termodoro" appears instead.
 class Termodoro
   attr_accessor :time_unit, :number_of_units, :message
+  attr_reader :arguments
   # @!attribute time_unit
   #   @return [String] the unit of time specified by the user.
   # @!attribute number_of_units
