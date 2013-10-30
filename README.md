@@ -1,5 +1,7 @@
 # Termodoro
 
+[![Build Status](https://travis-ci.org/vcavallo/termodoro.png)](https://travis-ci.org/vcavallo/termodoro)
+
 ## What is this?
 
 ***Termodoro*** is an ultra-simple, frictionless BASH reminder / pomodoro timer ( in fact it's portmanteau of *terminal* and *[pomodoro](http://en.wikipedia.org/wiki/Pomodoro_Technique)* )  
