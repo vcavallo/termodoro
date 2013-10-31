@@ -4,7 +4,7 @@ require './lib/termodoro/termodoro'
 
 Gem::Specification.new do |s|
   s.name        = 'termodoro'
-  s.version     = Termodoro::Version::VERSION
+  s.version     = Termodoro::VersionModule::VERSION
   s.date        = Time.now.utc.strftime("%Y-%m-%d")
   s.summary     = "A lightweight CL reminder app"
   s.description = "Use this little utility to set simple reminders from the command line. See the github page below for more information"
