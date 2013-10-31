@@ -1,3 +1,7 @@
+### 0.3.11 (10/30/2013)
+
+- Fix namespace issue on VERSION stuff. - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.3.10 (10/30/2013)
 
 - Fix typo that was actually breaking code. - [@vcavallo](http://github.com/vcavallo)
