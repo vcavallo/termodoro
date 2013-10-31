@@ -17,6 +17,9 @@ Gem::Specification.new do |s|
   s.executables << 'termodoro'
   s.require_paths = ['lib', 'bin', 'config']
 
+  s.has_rdoc = true
+  s.rdoc_options = ['-a', '--inline-source', '--charset=UTF-8']
+
   s.add_runtime_dependency "terminal-notifier"
   s.add_runtime_dependency "rake"
   s.add_development_dependency 'rspec'

@@ -1,3 +1,7 @@
+### 0.3.12 (10/30/2013)
+
+- Update gemspec to add some rdoc options. - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.3.11 (10/30/2013)
 
 - Fix namespace issue on VERSION stuff. - [@vcavallo](http://github.com/vcavallo)
