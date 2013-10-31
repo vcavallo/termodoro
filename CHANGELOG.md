@@ -1,3 +1,7 @@
+### 0.3.10 (10/30/2013)
+
+- Fix typo that was actually breaking code. - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.3.9 (10/30/2013)
 
 - Implement VERSION constant and update Gemspec to use that. Added test for the same. Other minor updates to Gemspec file.
