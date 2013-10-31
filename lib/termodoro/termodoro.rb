@@ -1,10 +1,11 @@
-
+require_relative 'version'
 # A new instance of this class takes user-input as command line arguments and 
 # prepares a string to be execute as a Bash system command. The user specifies an
 # amount of time and an optional message to display. After the amount of time elapses
 # a terminal-notifier message appears with the message - if the message was omitted,
 # the word "Termodoro" appears instead.
 class Termodoro
+  include Version
   attr_accessor :time_unit, :number_of_units, :message
   attr_reader :arguments
   # @!attribute time_unit

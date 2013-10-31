@@ -16,6 +16,10 @@ describe "Termodoro" do
     expect(term.command).to be_an_instance_of(String)
   end
 
+  it "can display its version" do
+    expect(Termodoro::VERSION).to be_an_instance_of(String)
+  end
+
   describe "Constants" do
     it "has a constant that represents number of seconds in a minute" do
       expect(Termodoro::SECS_IN_MIN / 60).to eq(1)

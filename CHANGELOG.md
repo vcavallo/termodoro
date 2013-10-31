@@ -1,3 +1,7 @@
+### 0.3.9 (10/30/2013)
+
+- Implement VERSION constant and update Gemspec to use that. Added test for the same. Other minor updates to Gemspec file.
+
 ### 0.3.5 (10/30/2013)
 
 - Now with SimpleCov! 100% on first run. Damn that felt good. - [@vcavallo](http://github.com/vcavallo)
