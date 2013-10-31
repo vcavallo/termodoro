@@ -5,7 +5,7 @@ require_relative './version'
 # a terminal-notifier message appears with the message - if the message was omitted,
 # the word "Termodoro" appears instead.
 class Termodoro
-  include Version
+  include VersionModule
   attr_accessor :time_unit, :number_of_units, :message
   attr_reader :arguments
   # @!attribute time_unit
