@@ -4,4 +4,4 @@ require_relative '../config/environment'
 # require 'termodoro'
 
 a = Termodoro.new(ARGV.join(" "))
-exec(a.command)
+exec(a.command.to_s)
