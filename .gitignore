@@ -14,6 +14,7 @@ tmp
 termodoro-*
 Gemfile.lock
 pkg
+.ruby-version
 
 # YARD artifacts
 .yardoc
