@@ -127,11 +127,6 @@ class Termodoro < Thor
   # @!attribute message
   #   @return [String] the message specified by the user.
 
-  # Used in multiplication to arrive at the number of seconds in a minute.
-  SECS_IN_MIN = 60
-  # Used in multiplication to arrive at the number of seconds in an hour.
-  SECS_IN_HOUR = 3600
-
   option :message, aliases: 'm'
   option :pause, aliases: 'p'
   option :status, aliases: 's'
@@ -146,12 +141,9 @@ class Termodoro < Thor
     puts "The status is..." if options[:status]
     puts "Resuming." if options[:resume]
 
+    options[:message] ? message = options[:message] : message = "some default"
+
     time = 2
-    if options[:message]
-      message = options[:message]
-    else
-      message = "some default"
-    end
 
     exec("sleep #{time} && terminal-notifier -message '#{message}' -title 'Termodoro' & disown")
   end
