@@ -1,5 +1,6 @@
 require_relative './version'
 require 'thor'
+require 'chronic'
 # A new instance of this class takes user-input as command line arguments and 
 # prepares a string to be execute as a Bash system command. The user specifies an
 # amount of time and an optional message to display. After the amount of time elapses
@@ -7,21 +8,22 @@ require 'thor'
 # the word "Termodoro" appears instead.
 
 class Timer < Thor
-  option :minutes, type: :numeric, aliases: 'm'
-  option :hours, type: :numeric, aliases: 'h'
-  option :seconds, type: :numeric, aliases: 's'
-  option :text, aliases: 't', default: "Remember to do that thing."
-  desc "test", "something happens"
-  def test
-    # segment = options[:duration].match(/\D+/)[0].split(' ').first
-    puts "this happened.."
-    puts "#{options[:minutes]} minutes" if options[:minutes]
-    puts "#{options[:hours]} hours" if options[:hours]
-    puts "#{options[:seconds]} seconds" if options[:seconds]
-    puts "message text: #{options[:text]}" if options[:text]
-    # puts "segment: #{segment}"
+  # option :minutes, type: :numeric, aliases: 'm'
+  # option :hours, type: :numeric, aliases: 'h'
+  # option :seconds, type: :numeric, aliases: 's'
+  option :say, aliases: 's', default: "Remember to do that thing."
+  option :duration, aliases: 'd', required: true
+
+  desc "timer", "something happens"
+  def timer
+    parsed_time = Chronic.parse(options[:duration])
+    timer_duration = parsed_time - Time.now
+    puts "reminder set for #{parsed_time.strftime("%A,%l:%M%p")}"
+    puts options[:say]
+    puts "(time difference: #{timer_duration} seconds)"
+    exec("sleep #{timer_duration} && terminal-notifier -message '#{options[:say]}' -title 'Termodoro' & disown")
   end
-  default_task :test
+  default_task :timer
 
   # def parse_time_unit
   #   segment = @arguments.match(/\D+/)[0].split(' ').first
@@ -154,7 +156,7 @@ class Termodoro < Thor
     exec("sleep #{time} && terminal-notifier -message '#{message}' -title 'Termodoro' & disown")
   end
 
-  desc "test", "does some sort of thing"
+  desc "timer", "does some sort of thing"
   subcommand "timer", Timer
 
 
