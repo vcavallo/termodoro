@@ -1,3 +1,7 @@
+### 0.4.0 (12/25/2013)
+
+- Merge [Baris Balic](https://github.com/barisbalic)'s pull request adding *nix compatibility through libnotify. - [@vcavallo](http://github.com/vcavallo)
+
 ### 0.3.12 (10/30/2013)
 
 - Update gemspec to add some rdoc options. - [@vcavallo](http://github.com/vcavallo)
