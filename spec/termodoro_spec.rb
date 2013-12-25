@@ -13,7 +13,7 @@ describe "Termodoro" do
   end
 
   it "ends up with a well-formed string to be issued as a system command" do
-    expect(term.command).to be_an_instance_of(String)
+    expect(term.command).to be_an_instance_of(Command)
   end
 
   it "can display its version" do
@@ -47,7 +47,7 @@ describe "Termodoro" do
     it "allows the message to be optional" do
       no_message_arg = "10 seconds"
       term_alt = Termodoro.new(no_message_arg)
-      expect(term_alt.command).to be_an_instance_of(String)
+      expect(term_alt.command).to be_an_instance_of(Command)
     end
 
     describe "Flexibility on wording of unit of time" do

@@ -1,3 +1,4 @@
+require 'rbconfig'
 require_relative './version'
 # A new instance of this class takes user-input as command line arguments and 
 # prepares a string to be execute as a Bash system command. The user specifies an
@@ -115,7 +116,7 @@ class Termodoro
   def command
     time_unit = calculate_time
     msg_part = parse_message
-    "sleep #{time_unit} && terminal-notifier -message '#{msg_part}' -title 'Termodoro' & disown"
+    Command.new(time_unit, msg_part, RbConfig::CONFIG['host_os'])
   end
 
 end
