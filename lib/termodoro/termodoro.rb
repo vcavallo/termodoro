@@ -81,7 +81,7 @@ class Termodoro
   # @see #parse_time_unit
   def seconds?
     seconds = %w[s sec secs second seconds]
-    true if seconds.include?(parse_time_unit)
+    seconds.include?(parse_time_unit)
   end
 
   # Truthy if user has input a number of minutes. 
@@ -89,7 +89,7 @@ class Termodoro
   # @see #parse_time_unit
   def minutes?
     minutes = %w[m min mins minute minutes]
-    true if minutes.include?(parse_time_unit)
+    minutes.include?(parse_time_unit)
   end
 
   # Truthy if user has input a number of hours. 
@@ -97,7 +97,7 @@ class Termodoro
   # @return [Boolean] 
   def hours?
     hours = %w[h hr hrs hour hours]
-    true if hours.include?(parse_time_unit)
+    hours.include?(parse_time_unit)
   end
 
   # PENDING - will eventually be used to ensure user input is safe to run as terminal
